@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>南投草屯一日遊 旅遊小本本</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Noto Sans TC -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #FAF7F2; /* 日系溫暖米白 */
+            color: #4A403A;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .glass-header {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+        }
+        .card-shadow {
+            box-shadow: 0 4px 15px -1px rgba(139, 115, 85, 0.08), 0 2px 6px -1px rgba(139, 115, 85, 0.04);
+        }
+        .active-tab {
+            color: #0d9488;
+            font-weight: 700;
+        }
+        .active-tab i {
+            transform: translateY(-2px);
+            transition: transform 0.2s;
+        }
+        /* Custom scrollbar hide for tab nav */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="pb-24 max-w-md mx-auto min-h-screen relative shadow-2xl border-x border-amber-100/50">
+
+    <!-- 頂部 Header -->
+    <header class="sticky top-0 z-40 glass-header border-b border-amber-100 p-4 transition-all">
+        <div class="flex justify-between items-center">
+            <div>
+                <span class="inline-block px-2.5 py-0.5 rounded-full text-xs font-semibold bg-teal-100 text-teal-800 mb-1">
+                    <i class="fa-regular fa-calendar-check mr-1"></i>2026/10/24 (六)
+                </span>
+                <h1 class="text-xl font-bold text-stone-800 tracking-tight">南投草屯一日遊</h1>
+            </div>
+            <div class="text-right text-xs text-stone-500">
+                <p class="font-medium text-stone-700"><i class="fa-solid fa-car-side text-teal-600 mr-1"></i>男友駕駛</p>
+                <p>佳里 ⇆ 草屯</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="p-4 space-y-5">
+
+        <!-- 駕駛與行車溫馨提示 -->
+        <div class="bg-amber-50/90 border border-amber-200/80 rounded-2xl p-3.5 flex items-start space-x-3 text-xs text-amber-900 card-shadow">
+            <div class="p-2 bg-amber-200/60 rounded-xl text-amber-700 shrink-0 mt-0.5">
+                <i class="fa-solid fa-cloud-moon text-base"></i>
+            </div>
+            <div class="space-y-1">
+                <p class="font-bold text-amber-950 flex items-center gap-1">
+                    駕駛溫馨提醒 <span class="text-[10px] bg-amber-200 px-1.5 py-0.2 rounded text-amber-800">日落 17:30</span>
+                </p>
+                <p class="leading-relaxed text-amber-900/90">
+                    回程大部分時間為夜間駕駛，請男友於服務區充分休息。若想早點回家，可適度縮短九九峰停留時間並提早發車！
+                </p>
+            </div>
+        </div>
+
+        <!-- 區塊 1: 時間軸 Timeline -->
+        <section id="sec-timeline" class="space-y-3 scroll-mt-20">
+            <div class="flex items-center justify-between">
+                <h2 class="text-base font-bold text-stone-800 flex items-center gap-2">
+                    <span class="w-2 h-4 bg-teal-600 rounded-full inline-block"></span>
+                    全天行程時間軸
+                </h2>
+                <span class="text-xs text-stone-400">點擊景點可查看卡片</span>
+            </div>
+
+            <div class="bg-white rounded-2xl p-4 card-shadow border border-stone-100 relative overflow-hidden">
+                <!-- 垂直時間軸線 -->
+                <div class="absolute left-7 top-6 bottom-6 w-0.5 bg-stone-200"></div>
+
+                <div class="space-y-5 relative">
+
+                    <!-- 08:45 -->
+                    <div class="flex items-start space-x-3 text-xs">
+                        <div class="w-7 h-7 rounded-full bg-stone-100 border-2 border-stone-300 text-stone-500 flex items-center justify-center shrink-0 z-10 font-bold text-[10px]">
+                            01
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex justify-between items-center mb-0.5">
+                                <span class="font-bold text-stone-800 text-sm">08:45</span>
+                                <span class="bg-stone-100 text-stone-600 px-2 py-0.5 rounded text-[10px]">出發準備</span>
+                            </div>
+                            <p class="text-stone-600">男友從安平出發，前往佳里</p>
+                        </div>
+                    </div>
+
+                    <!-- 09:30 -->
+                    <div class="flex items-start space-x-3 text-xs">
+                        <div class="w-7 h-7 rounded-full bg-stone-100 border-2 border-stone-300 text-stone-500 flex items-center justify-center shrink-0 z-10 font-bold text-[10px]">
+                            02
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex justify-between items-center mb-0.5">
+                                <span class="font-bold text-stone-800 text-sm">09:30</span>
+                                <span class="bg-teal-50 text-teal-700 px-2 py-0.5 rounded text-[10px]">國道北上</span>
+                            </div>
+                            <p class="text-stone-600">佳里子龍廟永昌宮出發，走國道往北</p>
+                        </div>
+                    </div>
+
+                    <!-- 11:45 ~ 12:45 -->
+                    <div class="flex items-start space-x-3 text-xs cursor-pointer hover:bg-stone-50 p-1.5 -m-1.5 rounded-xl transition" onclick="scrollToSpot('spot-meiyuan')">
+                        <div class="w-7 h-7 rounded-full bg-teal-600 text-white flex items-center justify-center shrink-0 z-10 font-bold text-[10px] shadow-sm">
+                            午餐
+                        </div>
+                        <div class="flex-1 pt-0.5">
+                            <div class="flex justify-between items-center mb-0.5">
+                                <span class="font-bold text-teal-800 text-sm">11:45 - 12:45</span>
+                                <span class="bg-amber-100 text-amber-800 px-2 py-0.5 rounded text-[10px] font-medium">梅園餡餅粥</span>
+                            </div>
+                            <p class="text-stone-600">中興新村在地美食午餐（12:00前入座）</p>
+                        </div>
+                    </div>
+
+                    <!-- 12:50 ~ 13:20 -->
+                    <div class="flex items-start space-x-3 text-xs cursor-pointer hover:bg-stone-50 p-1.5 -m-1.5 rounded-xl transition" onclick="scrollToSpot('spot-zhengdian')">
+                        <div class="w-7 h-7 rounded-full bg-sky-500 text-white flex items-center justify-center shrink-0 z-10 font-bold text-[10px] shadow-sm">
+                            甜點
+                        </div>
+                        <div class="flex-1 pt-0.5">
+                            <div class="flex justify-between items-center mb-0.5">
+                                <span class="font-bold text-stone-800 text-sm">12:50 - 13:20</span>
+                                <span class="bg-sky-100 text-sky-800 px-2 py-0.5 rounded text-[10px] font-medium">正典牛乳大王</span>
+                            </div>
+                            <p class="text-stone-600">享用招牌餅乾三明治冰磚（第三市場）</p>
+                        </div>
+                    </div>
+
+                    <!-- 13:30 ~ 15:45 -->
+                    <div class="flex items-start space-x-3 text-xs cursor-pointer hover:bg-stone-50 p-1.5 -m-1.5 rounded-xl transition" onclick="scrollToSpot('spot-99peak')">
+                        <div class="w-7 h-7 rounded-full bg-emerald-600 text-white flex items-center justify-center shrink-0 z-10 font-bold text-[10px] shadow-sm">
+                            景點
+                        </div>
+                        <div class="flex-1 pt-0.5">
+                            <div class="flex justify-between items-center mb-0.5">
+                                <span class="font-bold text-emerald-800 text-sm">13:30 - 15:45</span>
+                                <span class="bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded text-[10px] font-medium">九九峰動物樂園</span>
+                            </div>
+                            <p class="text-stone-600">停留約 2 小時 15 分鐘，近距離看動物</p>
+                        </div>
+                    </div>
+
+                    <!-- 15:55 ~ 16:10 -->
+                    <div class="flex items-start space-x-3 text-xs cursor-pointer hover:bg-stone-50 p-1.5 -m-1.5 rounded-xl transition" onclick="scrollToSpot('spot-huamei')">
+                        <div class="w-7 h-7 rounded-full bg-orange-500 text-white flex items-center justify-center shrink-0 z-10 font-bold text-[10px] shadow-sm">
+                            伴食
+                        </div>
+                        <div class="flex-1 pt-0.5">
+                            <div class="flex justify-between items-center mb-0.5">
+                                <span class="font-bold text-stone-800 text-sm">15:55 - 16:10</span>
+                                <span class="bg-orange-100 text-orange-800 px-2 py-0.5 rounded text-[10px] font-medium">華美鮮蛋捲</span>
+                            </div>
+                            <p class="text-stone-600">九九峰園區附近順路買蛋捲伴手禮</p>
+                        </div>
+                    </div>
+
+                    <!-- 16:20 ~ 16:40 -->
+                    <div class="flex items-start space-x-3 text-xs cursor-pointer hover:bg-stone-50 p-1.5 -m-1.5 rounded-xl transition" onclick="scrollToSpot('spot-fangsuxin')">
+                        <div class="w-7 h-7 rounded-full bg-rose-500 text-white flex items-center justify-center shrink-0 z-10 font-bold text-[10px] shadow-sm">
+                            名產
+                        </div>
+                        <div class="flex-1 pt-0.5">
+                            <div class="flex justify-between items-center mb-0.5">
+                                <span class="font-bold text-rose-800 text-sm">16:20 - 16:40</span>
+                                <span class="bg-rose-100 text-rose-800 px-2 py-0.5 rounded text-[10px] font-medium">方愫馨麻糬旗艦店</span>
+                            </div>
+                            <p class="text-stone-600">草屯知名手工麻糬（離關門剩 20 分鐘）</p>
+                        </div>
+                    </div>
+
+                    <!-- 16:45 -->
+                    <div class="flex items-start space-x-3 text-xs">
+                        <div class="w-7 h-7 rounded-full bg-stone-800 text-white flex items-center justify-center shrink-0 z-10 font-bold text-[10px]">
+                            返程
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex justify-between items-center mb-0.5">
+                                <span class="font-bold text-stone-800 text-sm">16:45</span>
+                                <span class="bg-stone-200 text-stone-700 px-2 py-0.5 rounded text-[10px]">啟程回南台灣</span>
+                            </div>
+                            <p class="text-stone-600">草屯發車返回佳里／安平</p>
+                        </div>
+                    </div>
+
+                    <!-- 18:25 ~ 18:40 -->
+                    <div class="flex items-start space-x-3 text-xs">
+                        <div class="w-7 h-7 rounded-full bg-amber-500 text-white flex items-center justify-center shrink-0 z-10 font-bold text-[10px]">
+                            休息
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex justify-between items-center mb-0.5">
+                                <span class="font-bold text-stone-800 text-sm">18:25 - 18:40</span>
+                                <span class="bg-amber-100 text-amber-800 px-2 py-0.5 rounded text-[10px]">服務區停靠</span>
+                            </div>
+                            <p class="text-stone-600">休息約 15 分鐘，買簡單餐點當晚餐</p>
+                        </div>
+                    </div>
+
+                    <!-- 18:50 ~ 20:20 -->
+                    <div class="flex items-start space-x-3 text-xs">
+                        <div class="w-7 h-7 rounded-full bg-stone-100 border-2 border-stone-300 text-stone-500 flex items-center justify-center shrink-0 z-10 font-bold text-[10px]">
+                            抵達
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <div class="flex justify-between items-center mb-0.5">
+                                <span class="font-bold text-stone-800 text-sm">18:50 / 20:20</span>
+                                <span class="bg-teal-50 text-teal-700 px-2 py-0.5 rounded text-[10px]">平安抵家</span>
+                            </div>
+                            <p class="text-stone-600">18:50 佳里子龍廟下車 ➔ 19:50~20:20 男友返抵安平</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 區塊 2: 景點詳細卡片 -->
+        <section id="sec-spots" class="space-y-3 scroll-mt-20">
+            <h2 class="text-base font-bold text-stone-800 flex items-center gap-2">
+                <span class="w-2 h-4 bg-teal-600 rounded-full inline-block"></span>
+                各站詳細資訊卡片
+            </h2>
+
+            <!-- 1. 梅園餡餅粥 -->
+            <div id="spot-meiyuan" class="bg-white rounded-2xl p-4 card-shadow border border-stone-100 space-y-3">
+                <div class="flex justify-between items-start border-b border-stone-100 pb-2">
+                    <div>
+                        <span class="text-[11px] font-bold text-teal-600 uppercase tracking-wider">01. 午餐首選</span>
+                        <h3 class="text-lg font-bold text-stone-800">梅園餡餅粥</h3>
+                    </div>
+                    <a href="tel:0492315902" class="bg-teal-50 hover:bg-teal-100 text-teal-700 p-2 rounded-xl text-xs flex items-center gap-1 font-medium transition">
+                        <i class="fa-solid fa-phone"></i> 打電話
+                    </a>
+                </div>
+
+                <div class="space-y-1.5 text-xs text-stone-600">
+                    <p class="flex items-start gap-2">
+                        <i class="fa-solid fa-location-dot text-stone-400 mt-0.5 shrink-0"></i>
+                        <span>南投縣南投市中興新村中學西路 18 號</span>
+                    </p>
+                    <p class="flex items-center gap-2">
+                        <i class="fa-solid fa-clock text-stone-400 shrink-0"></i>
+                        <span>11:00–14:00、17:00–20:00（週一公休）</span>
+                    </p>
+                </div>
+
+                <div class="bg-rose-50 text-rose-800 text-xs p-2.5 rounded-xl border border-rose-100 flex items-start gap-2">
+                    <i class="fa-solid fa-triangle-exclamation text-rose-500 mt-0.5 shrink-0"></i>
+                    <span>中午 14:00 關門，請盡量在 12:00 前入座。出發前請打電話確認營業狀態！</span>
+                </div>
+
+                <a href="https://www.google.com/maps/search/?api=1&query=梅園餡餅粥+南投縣南投市中興新村中學西路18號" target="_blank" class="w-full bg-stone-800 hover:bg-stone-900 text-white py-2.5 rounded-xl text-xs font-medium flex items-center justify-center gap-2 transition shadow-sm">
+                    <i class="fa-solid fa-map-location-dot"></i> 開啟 Google 地圖導航
+                </a>
+            </div>
+
+            <!-- 2. 正典牛乳大王 -->
+            <div id="spot-zhengdian" class="bg-white rounded-2xl p-4 card-shadow border border-stone-100 space-y-3">
+                <div class="flex justify-between items-start border-b border-stone-100 pb-2">
+                    <div>
+                        <span class="text-[11px] font-bold text-sky-600 uppercase tracking-wider">02. 點心冰品</span>
+                        <h3 class="text-lg font-bold text-stone-800">正典牛乳大王</h3>
+                    </div>
+                    <span class="bg-sky-50 text-sky-700 text-xs px-2.5 py-1 rounded-xl font-medium">三明治冰磚</span>
+                </div>
+
+                <div class="space-y-1.5 text-xs text-stone-600">
+                    <p class="flex items-start gap-2">
+                        <i class="fa-solid fa-location-dot text-stone-400 mt-0.5 shrink-0"></i>
+                        <span>南投縣南投市光榮西路一街 11 號（第三市場）</span>
+                    </p>
+                    <p class="flex items-center gap-2">
+                        <i class="fa-solid fa-clock text-stone-400 shrink-0"></i>
+                        <span>週二至日 10:00–17:30（週一公休）</span>
+                    </p>
+                </div>
+
+                <div class="bg-amber-50 text-amber-800 text-xs p-2.5 rounded-xl border border-amber-100 flex items-start gap-2">
+                    <i class="fa-solid fa-circle-info text-amber-600 mt-0.5 shrink-0"></i>
+                    <span>冰磚每日限量，建議早點前往；現場可能僅提供外帶。</span>
+                </div>
+
+                <a href="https://www.google.com/maps/search/?api=1&query=正典牛乳大王+南投縣南投市光榮西路一街11號" target="_blank" class="w-full bg-stone-800 hover:bg-stone-900 text-white py-2.5 rounded-xl text-xs font-medium flex items-center justify-center gap-2 transition shadow-sm">
+                    <i class="fa-solid fa-map-location-dot"></i> 開啟 Google 地圖導航
+                </a>
+            </div>
+
+            <!-- 3. 九九峰動物樂園 -->
+            <div id="spot-99peak" class="bg-white rounded-2xl p-4 card-shadow border border-stone-100 space-y-3">
+                <div class="flex justify-between items-start border-b border-stone-100 pb-2">
+                    <div>
+                        <span class="text-[11px] font-bold text-emerald-600 uppercase tracking-wider">03. 主要景點</span>
+                        <h3 class="text-lg font-bold text-stone-800">九九峰動物樂園</h3>
+                    </div>
+                    <a href="tel:0492565107" class="bg-teal-50 hover:bg-teal-100 text-teal-700 p-2 rounded-xl text-xs flex items-center gap-1 font-medium transition">
+                        <i class="fa-solid fa-phone"></i> 打電話
+                    </a>
+                </div>
+
+                <div class="space-y-1.5 text-xs text-stone-600">
+                    <p class="flex items-start gap-2">
+                        <i class="fa-solid fa-location-dot text-stone-400 mt-0.5 shrink-0"></i>
+                        <span>南投縣草屯鎮富頂路一段 726 巷 99 號</span>
+                    </p>
+                    <p class="flex items-center gap-2">
+                        <i class="fa-solid fa-clock text-stone-400 shrink-0"></i>
+                        <span>假日 09:00–17:30（最後入場閉園前 30 分鐘）</span>
+                    </p>
+                    <p class="flex items-center gap-2">
+                        <i class="fa-solid fa-ticket text-stone-400 shrink-0"></i>
+                        <span>全票約 560 元（網路預購需提前 1~2 天）</span>
+                    </p>
+                </div>
+
+                <div class="bg-emerald-50 text-emerald-800 text-xs p-2.5 rounded-xl border border-emerald-100 flex items-start gap-2">
+                    <i class="fa-solid fa-utensils text-emerald-600 mt-0.5 shrink-0"></i>
+                    <span>可帶外食，但動物展區內禁止飲食；吃冰與飲料請至入口或休息區。</span>
+                </div>
+
+                <a href="https://www.google.com/maps/search/?api=1&query=九九峰動物樂園+南投縣草屯鎮富頂路一段726巷99號" target="_blank" class="w-full bg-stone-800 hover:bg-stone-900 text-white py-2.5 rounded-xl text-xs font-medium flex items-center justify-center gap-2 transition shadow-sm">
+                    <i class="fa-solid fa-map-location-dot"></i> 開啟 Google 地圖導航
+                </a>
+            </div>
+
+            <!-- 4. 華美鮮蛋捲 -->
+            <div id="spot-huamei" class="bg-white rounded-2xl p-4 card-shadow border border-stone-100 space-y-3">
+                <div class="flex justify-between items-start border-b border-stone-100 pb-2">
+                    <div>
+                        <span class="text-[11px] font-bold text-orange-600 uppercase tracking-wider">04. 順路伴手禮</span>
+                        <h3 class="text-lg font-bold text-stone-800">華美鮮蛋捲</h3>
+                    </div>
+                    <span class="bg-orange-50 text-orange-700 text-xs px-2.5 py-1 rounded-xl font-medium">蛋捲名店</span>
+                </div>
+
+                <div class="space-y-1.5 text-xs text-stone-600">
+                    <p class="flex items-start gap-2">
+                        <i class="fa-solid fa-location-dot text-stone-400 mt-0.5 shrink-0"></i>
+                        <span>南投縣草屯鎮坪頂里股坑巷 18 號</span>
+                    </p>
+                </div>
+
+                <div class="bg-stone-100 text-stone-700 text-xs p-2.5 rounded-xl border border-stone-200 flex items-start gap-2">
+                    <i class="fa-solid fa-car text-stone-500 mt-0.5 shrink-0"></i>
+                    <span>位置就在九九峰動物樂園附近，順路採買非常方便。</span>
+                </div>
+
+                <a href="https://www.google.com/maps/search/?api=1&query=華美鮮蛋捲+南投縣草屯鎮坪頂里股坑巷18號" target="_blank" class="w-full bg-stone-800 hover:bg-stone-900 text-white py-2.5 rounded-xl text-xs font-medium flex items-center justify-center gap-2 transition shadow-sm">
+                    <i class="fa-solid fa-map-location-dot"></i> 開啟 Google 地圖導航
+                </a>
+            </div>
+
+            <!-- 5. 方愫馨麻糬工坊旗艦店 -->
+            <div id="spot-fangsuxin" class="bg-white rounded-2xl p-4 card-shadow border border-stone-100 space-y-3">
+                <div class="flex justify-between items-start border-b border-stone-100 pb-2">
+                    <div>
+                        <span class="text-[11px] font-bold text-rose-600 uppercase tracking-wider">05. 草屯名產</span>
+                        <h3 class="text-lg font-bold text-stone-800">方愫馨麻糬旗艦店</h3>
+                    </div>
+                    <a href="tel:0492380123" class="bg-teal-50 hover:bg-teal-100 text-teal-700 p-2 rounded-xl text-xs flex items-center gap-1 font-medium transition">
+                        <i class="fa-solid fa-phone"></i> 打電話
+                    </a>
+                </div>
+
+                <div class="space-y-1.5 text-xs text-stone-600">
+                    <p class="flex items-start gap-2">
+                        <i class="fa-solid fa-location-dot text-stone-400 mt-0.5 shrink-0"></i>
+                        <span>南投縣草屯鎮太平路二段 2 號</span>
+                    </p>
+                    <p class="flex items-center gap-2">
+                        <i class="fa-solid fa-clock text-stone-400 shrink-0"></i>
+                        <span>08:00–17:00（週三休息）</span>
+                    </p>
+                </div>
+
+                <div class="bg-rose-50 text-rose-800 text-xs p-2.5 rounded-xl border border-rose-100 space-y-1">
+                    <p class="font-bold flex items-center gap-1">
+                        <i class="fa-solid fa-bolt text-rose-600"></i> 時間最緊的一站！
+                    </p>
+                    <p>預計 16:40 到達，距離 17:00 關門僅 20 分鐘！店面無專用停車場，僅能路邊暫停下車快速購買。麻糬請於 2 天內食用完畢。</p>
+                </div>
+
+                <a href="https://www.google.com/maps/search/?api=1&query=方愫馨麻糬工坊旗艦店+南投縣草屯鎮太平路二段2號" target="_blank" class="w-full bg-stone-800 hover:bg-stone-900 text-white py-2.5 rounded-xl text-xs font-medium flex items-center justify-center gap-2 transition shadow-sm">
+                    <i class="fa-solid fa-map-location-dot"></i> 開啟 Google 地圖導航
+                </a>
+            </div>
+        </section>
+
+        <!-- 區塊 3: 行前 Check-list 勾選清單 -->
+        <section id="sec-checklist" class="space-y-3 scroll-mt-20">
+            <div class="flex items-center justify-between">
+                <h2 class="text-base font-bold text-stone-800 flex items-center gap-2">
+                    <span class="w-2 h-4 bg-teal-600 rounded-full inline-block"></span>
+                    出發前 Check-list
+                </h2>
+                <button onclick="resetChecklist()" class="text-xs text-stone-400 hover:text-stone-600 underline">
+                    重置勾選
+                </button>
+            </div>
+
+            <div class="bg-white rounded-2xl p-4 card-shadow border border-stone-100 space-y-2.5">
+                <label class="flex items-center space-x-3 p-2 rounded-xl hover:bg-stone-50 cursor-pointer transition">
+                    <input type="checkbox" id="chk-1" onchange="saveChecklist()" class="w-4 h-4 rounded text-teal-600 focus:ring-teal-500 border-stone-300">
+                    <span class="text-xs text-stone-700">確認梅園營業狀態（04-9231-5902）</span>
+                </label>
+
+                <label class="flex items-center space-x-3 p-2 rounded-xl hover:bg-stone-50 cursor-pointer transition">
+                    <input type="checkbox" id="chk-2" onchange="saveChecklist()" class="w-4 h-4 rounded text-teal-600 focus:ring-teal-500 border-stone-300">
+                    <span class="text-xs text-stone-700">查詢華美鮮蛋捲營業時間（Google 地圖）</span>
+                </label>
+
+                <label class="flex items-center space-x-3 p-2 rounded-xl hover:bg-stone-50 cursor-pointer transition">
+                    <input type="checkbox" id="chk-3" onchange="saveChecklist()" class="w-4 h-4 rounded text-teal-600 focus:ring-teal-500 border-stone-300">
+                    <span class="text-xs text-stone-700">確認方愫馨 10/24 有營業（週六非公休）</span>
+                </label>
+
+                <label class="flex items-center space-x-3 p-2 rounded-xl hover:bg-stone-50 cursor-pointer transition">
+                    <input type="checkbox" id="chk-4" onchange="saveChecklist()" class="w-4 h-4 rounded text-teal-600 focus:ring-teal-500 border-stone-300">
+                    <span class="text-xs text-stone-700">確認九九峰動物樂園官方時間與門票預購</span>
+                </label>
+
+                <label class="flex items-center space-x-3 p-2 rounded-xl hover:bg-stone-50 cursor-pointer transition">
+                    <input type="checkbox" id="chk-5" onchange="saveChecklist()" class="w-4 h-4 rounded text-teal-600 focus:ring-teal-500 border-stone-300">
+                    <span class="text-xs text-stone-700">確認 10/24 南投草屯當日天氣預報</span>
+                </label>
+
+                <label class="flex items-center space-x-3 p-2 rounded-xl hover:bg-stone-50 cursor-pointer transition">
+                    <input type="checkbox" id="chk-6" onchange="saveChecklist()" class="w-4 h-4 rounded text-teal-600 focus:ring-teal-500 border-stone-300">
+                    <span class="text-xs text-stone-700">檢查男友車況、油量與夜間駕駛提神準備</span>
+                </label>
+            </div>
+        </section>
+
+        <!-- 區塊 4: 備案卡片 -->
+        <section id="sec-backup" class="space-y-3 scroll-mt-20">
+            <h2 class="text-base font-bold text-stone-800 flex items-center gap-2">
+                <span class="w-2 h-4 bg-teal-600 rounded-full inline-block"></span>
+                彈性備案選項
+            </h2>
+
+            <div class="grid grid-cols-1 gap-2.5 text-xs">
+
+                <!-- 備案 1 -->
+                <div class="bg-white p-3.5 rounded-2xl card-shadow border border-stone-100 space-y-1">
+                    <p class="font-bold text-amber-800 flex items-center gap-1.5">
+                        <i class="fa-solid fa-utensils"></i> 梅園排隊太久（12:15 未入座）
+                    </p>
+                    <p class="text-stone-600">改去草屯的 <span class="font-bold text-stone-800">「麵五三屋台ラーメン」</span> 吃午餐，距離梅園不遠。</p>
+                </div>
+
+                <!-- 備案 2 -->
+                <div class="bg-white p-3.5 rounded-2xl card-shadow border border-stone-100 space-y-1">
+                    <p class="font-bold text-teal-800 flex items-center gap-1.5">
+                        <i class="fa-solid fa-list-ol"></i> 時間來不及時的刪減順序
+                    </p>
+                    <p class="text-stone-600">優先順序：梅園午餐 ➔ 九九峰 ➔ 華美蛋捲 ➔ 方愫馨麻糬 ➔ 正典牛乳。</p>
+                </div>
+
+                <!-- 備案 3 -->
+                <div class="bg-white p-3.5 rounded-2xl card-shadow border border-stone-100 space-y-1">
+                    <p class="font-bold text-sky-800 flex items-center gap-1.5">
+                        <i class="fa-solid fa-mug-hot"></i> 途中想喝手搖飲
+                    </p>
+                    <p class="text-stone-600">可順路前往 <span class="font-bold text-stone-800">「茶海 CHA Hi 大觀店」</span>（草屯市區），離方愫馨僅約 1.5 公里。</p>
+                </div>
+
+                <!-- 備案 4 -->
+                <div class="bg-white p-3.5 rounded-2xl card-shadow border border-stone-100 space-y-1">
+                    <p class="font-bold text-purple-800 flex items-center gap-1.5">
+                        <i class="fa-solid fa-bed"></i> 臨時想改過夜行程
+                    </p>
+                    <p class="text-stone-600">16:45 後改去飯店入住，晚餐可安排至南投市吃 <span class="font-bold text-stone-800">「炮哥薑母鴨」</span>。</p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 底部導覽列 Navigation Bar -->
+    <nav class="fixed bottom-0 left-0 right-0 z-50 glass-header border-t border-amber-100 max-w-md mx-auto">
+        <div class="flex justify-around items-center py-2 text-[10px]">
+            <button onclick="scrollToSection('sec-timeline')" id="nav-timeline" class="nav-btn flex flex-col items-center py-1 px-3 text-stone-400 hover:text-teal-600 transition active-tab">
+                <i class="fa-solid fa-clock-rotate-left text-base mb-0.5"></i>
+                <span>時間軸</span>
+            </button>
+            <button onclick="scrollToSection('sec-spots')" id="nav-spots" class="nav-btn flex flex-col items-center py-1 px-3 text-stone-400 hover:text-teal-600 transition">
+                <i class="fa-solid fa-map-pin text-base mb-0.5"></i>
+                <span>景點卡</span>
+            </button>
+            <button onclick="scrollToSection('sec-checklist')" id="nav-checklist" class="nav-btn flex flex-col items-center py-1 px-3 text-stone-400 hover:text-teal-600 transition">
+                <i class="fa-solid fa-list-check text-base mb-0.5"></i>
+                <span>清單</span>
+            </button>
+            <button onclick="scrollToSection('sec-backup')" id="nav-backup" class="nav-btn flex flex-col items-center py-1 px-3 text-stone-400 hover:text-teal-600 transition">
+                <i class="fa-solid fa-compass text-base mb-0.5"></i>
+                <span>備案</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- JavaScript 邏輯 -->
+    <script>
+        // 頁面滾動與導覽列連動
+        function scrollToSection(id) {
+            const el = document.getElementById(id);
+            if (el) {
+                el.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function scrollToSpot(spotId) {
+            const el = document.getElementById(spotId);
+            if (el) {
+                el.scrollIntoView({ behavior: 'smooth' });
+                // 動態效果突出卡片
+                el.classList.add('ring-2', 'ring-teal-500');
+                setTimeout(() => {
+                    el.classList.remove('ring-2', 'ring-teal-500');
+                }, 1500);
+            }
+        }
+
+        // LocalStorage 行前清單功能
+        function saveChecklist() {
+            const checkboxes = document.querySelectorAll('#sec-checklist input[type="checkbox"]');
+            const state = {};
+            checkboxes.forEach(chk => {
+                state[chk.id] = chk.checked;
+            });
+            localStorage.setItem('nantou_trip_checklist', JSON.stringify(state));
+        }
+
+        function loadChecklist() {
+            const saved = localStorage.getItem('nantou_trip_checklist');
+            if (saved) {
+                const state = JSON.parse(saved);
+                Object.keys(state).forEach(id => {
+                    const chk = document.getElementById(id);
+                    if (chk) {
+                        chk.checked = state[id];
+                    }
+                });
+            }
+        }
+
+        function resetChecklist() {
+            const checkboxes = document.querySelectorAll('#sec-checklist input[type="checkbox"]');
+            checkboxes.forEach(chk => chk.checked = false);
+            localStorage.removeItem('nantou_trip_checklist');
+        }
+
+        // 監聽滾動以調整導覽列高亮
+        window.addEventListener('scroll', () => {
+            const sections = ['sec-timeline', 'sec-spots', 'sec-checklist', 'sec-backup'];
+            const scrollPos = window.scrollY + 100;
+
+            sections.forEach(secId => {
+                const sec = document.getElementById(secId);
+                const navBtn = document.getElementById('nav-' + secId.replace('sec-', ''));
+                if (sec && navBtn) {
+                    if (scrollPos >= sec.offsetTop && scrollPos < sec.offsetTop + sec.offsetHeight) {
+                        document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active-tab'));
+                        navBtn.classList.add('active-tab');
+                    }
+                }
+            });
+        });
+
+        // 頁面載入後自動復原 Check-list 狀態
+        window.addEventListener('DOMContentLoaded', () => {
+            loadChecklist();
+        });
+    </script>
+</body>
+</html>
